@@ -12,6 +12,6 @@ class AppRoutes {
   // ===== DAFTAR HALAMAN =====
   static final pages = [
     GetPage(name: splash, page: () => const SplashPage()),
-    GetPage(name: onboarding, page: () => const OnboardingPage()),
+    GetPage(name: onboarding, page: () => OnboardingPage()),
   ];
 }
