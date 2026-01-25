@@ -49,7 +49,7 @@ class OnboardingPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: isActive
                             ? AppColors.accent
-                            : AppColors.gray.withOpacity(0.4),
+                            : AppColors.gray,
                         borderRadius: BorderRadius.circular(99),
                       ),
                     );
@@ -89,8 +89,8 @@ class OnboardingPage extends StatelessWidget {
                 child: IconButton(
                   onPressed: controller.next,
                   icon: const Icon(Icons.arrow_forward, color: Colors.white),
-                  padding: EdgeInsets.zero, // ⬅️ INI KUNCI
-                  alignment: Alignment.center, // ⬅️ BENER-BENER TENGAH
+                  padding: EdgeInsets.zero, 
+                  alignment: Alignment.center,
                 ),
               ),
             ),
