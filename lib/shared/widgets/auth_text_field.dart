@@ -24,11 +24,11 @@ class AuthTextField extends StatelessWidget {
           color: AppColors.gray,
           fontWeight: FontWeight.w300,
         ),
-        prefixIcon: Icon(icon, color: Colors.grey.shade400),
+        prefixIcon: Icon(icon, color: AppColors.softGray),
         contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
-          borderSide: BorderSide(color: Colors.grey.shade400),
+          borderSide: BorderSide(color: AppColors.softGray),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
@@ -69,14 +69,11 @@ class _AuthPasswordFieldState extends State<AuthPasswordField> {
           color: AppColors.gray,
           fontWeight: FontWeight.w300,
         ),
-        prefixIcon: Icon(
-          Icons.lock_outline_rounded,
-          color: Colors.grey.shade400,
-        ),
+        prefixIcon: Icon(Icons.lock_outline_rounded, color: AppColors.softGray),
         suffixIcon: IconButton(
           icon: Icon(
             _obscureText ? Icons.visibility_off : Icons.visibility,
-            color: Colors.grey.shade400,
+            color: AppColors.softGray,
           ),
           onPressed: () {
             setState(() {
@@ -87,7 +84,7 @@ class _AuthPasswordFieldState extends State<AuthPasswordField> {
         contentPadding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),
-          borderSide: BorderSide(color: Colors.grey.shade400),
+          borderSide: BorderSide(color: AppColors.softGray),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(24),

@@ -70,11 +70,58 @@ class LoginPage extends StatelessWidget {
                 fontFamily: 'Poppins',
                 fontSize: 14,
                 color: AppColors.primary,
-                fontWeight: FontWeight.w600, 
+                fontWeight: FontWeight.w600,
               ),
             ),
             SizedBox(height: 8),
             AuthPasswordField(hint: 'min 8 karakter'),
+            SizedBox(height: 64),
+            SizedBox(
+              width: double.infinity,
+              height: 48,
+              child: ElevatedButton(
+                onPressed: null,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.softGray,
+                  disabledBackgroundColor: AppColors.softGray,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+                child: const Text(
+                  'Sign In',
+                  style: TextStyle(
+                    fontFamily: 'Poppins',
+                    fontSize: 14, // ukuran teks
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: Divider(color: AppColors.softGray, thickness: 1),
+                ),
+                SizedBox(width: 24),
+                Text(
+                  'or',
+                  style: TextStyle(
+                    color: AppColors.gray,
+                    fontSize: 14,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                SizedBox(width: 24),
+                Expanded(
+                  child: Divider(color: AppColors.softGray, thickness: 1),
+                ),
+              ],
+            ),
           ],
         ),
       ),
