@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class LoginSuccessPage extends StatelessWidget {
   const LoginSuccessPage({super.key});
 

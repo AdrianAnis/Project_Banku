@@ -4,12 +4,19 @@ import 'package:flutter/material.dart';
 class AuthTextField extends StatelessWidget {
   final String hint;
   final IconData icon;
+  final TextEditingController? controller;
 
-  const AuthTextField({super.key, required this.hint, required this.icon});
+  const AuthTextField({
+    super.key,
+    required this.hint,
+    required this.icon,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       style: TextStyle(
         fontFamily: 'Poppins',
         fontSize: 14,
@@ -41,8 +48,13 @@ class AuthTextField extends StatelessWidget {
 
 class AuthPasswordField extends StatefulWidget {
   final String hint;
+  final TextEditingController? controller;
 
-  const AuthPasswordField({super.key, required this.hint});
+  const AuthPasswordField({
+    super.key,
+    required this.hint,
+    required this.controller,
+  });
 
   @override
   State<AuthPasswordField> createState() => _AuthPasswordFieldState();
@@ -54,6 +66,7 @@ class _AuthPasswordFieldState extends State<AuthPasswordField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: widget.controller,
       obscureText: _obscureText,
       style: TextStyle(
         fontFamily: 'Poppins',

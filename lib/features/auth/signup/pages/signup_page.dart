@@ -1,8 +1,10 @@
 import 'package:app_banku/core/theme/app_colors.dart';
 import 'package:app_banku/shared/widgets/auth_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:app_banku/features/auth/signup/controllers/signup_controller.dart';
 
-class SignUpPage extends StatelessWidget {
+class SignUpPage extends GetView<SignupController> {
   const SignUpPage({super.key});
 
   @override
@@ -13,7 +15,9 @@ class SignUpPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 92),
+            const SizedBox(height: 92),
+
+            // ===== TITLE =====
             RichText(
               text: TextSpan(
                 children: [
@@ -38,7 +42,8 @@ class SignUpPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 6),
+
+            const SizedBox(height: 6),
             Text(
               'Sign up sekarang untuk menjadi bagian dari BanKu',
               style: TextStyle(
@@ -48,7 +53,9 @@ class SignUpPage extends StatelessWidget {
                 fontWeight: FontWeight.w300,
               ),
             ),
-            SizedBox(height: 64),
+
+            const SizedBox(height: 64),
+
             Text(
               'Email',
               style: TextStyle(
@@ -58,12 +65,16 @@ class SignUpPage extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
+
             AuthTextField(
               hint: 'ex: adriangans@gmail.com',
               icon: Icons.email_outlined,
+              controller: controller.emailController, 
             ),
-            SizedBox(height: 16),
+
+            const SizedBox(height: 16),
+
             Text(
               'Password',
               style: TextStyle(
@@ -73,17 +84,23 @@ class SignUpPage extends StatelessWidget {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 8),
-            AuthPasswordField(hint: 'min 8 karakter'),
-            SizedBox(height: 64),
+            const SizedBox(height: 8),
+
+            AuthPasswordField(
+              hint: 'min 8 karakter',
+              controller: controller.passwordController, 
+            ),
+
+            const SizedBox(height: 64),
+
+            // ===== BUTTON =====
             SizedBox(
               width: double.infinity,
               height: 48,
               child: ElevatedButton(
-                onPressed: null,
+                onPressed: controller.signup, // 🔥 siap dipakai
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.softGray,
-                  disabledBackgroundColor: AppColors.softGray,
+                  backgroundColor: AppColors.primary,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
@@ -93,33 +110,30 @@ class SignUpPage extends StatelessWidget {
                   'Sign Up',
                   style: TextStyle(
                     fontFamily: 'Poppins',
-                    fontSize: 14, // ukuran teks
+                    fontSize: 14,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),
                 ),
               ),
             ),
-            SizedBox(height: 16),
+
+            const SizedBox(height: 16),
+
             Row(
               children: [
-                Expanded(
-                  child: Divider(color: AppColors.softGray, thickness: 1),
-                ),
-                SizedBox(width: 24),
+                Expanded(child: Divider(color: AppColors.softGray)),
+                const SizedBox(width: 24),
                 Text(
                   'or',
                   style: TextStyle(
                     color: AppColors.gray,
                     fontSize: 14,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.normal,
                   ),
                 ),
-                SizedBox(width: 24),
-                Expanded(
-                  child: Divider(color: AppColors.softGray, thickness: 1),
-                ),
+                const SizedBox(width: 24),
+                Expanded(child: Divider(color: AppColors.softGray)),
               ],
             ),
           ],

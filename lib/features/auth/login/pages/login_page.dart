@@ -1,10 +1,13 @@
 import 'package:app_banku/core/theme/app_colors.dart';
+import 'package:app_banku/features/auth/login/controllers/login_controller.dart';
 import 'package:app_banku/shared/widgets/auth_text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
 
+  final LoginController controller = Get.put(LoginController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +65,7 @@ class LoginPage extends StatelessWidget {
             AuthTextField(
               hint: 'ex: adriangans@gmail.com',
               icon: Icons.email_outlined,
+              controller: controller.emailController,
             ),
             SizedBox(height: 16),
             Text(
@@ -74,7 +78,10 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            AuthPasswordField(hint: 'min 8 karakter'),
+            AuthPasswordField(
+              hint: 'min 8 karakter',
+              controller: controller.passwordController,
+            ),
             SizedBox(height: 64),
             SizedBox(
               width: double.infinity,
